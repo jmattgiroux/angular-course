@@ -47,11 +47,11 @@ course-card.is-last {
   padding-top: 20px;
 }
 
-course-card.is-even {
+course-card .is-even {
   background: lightgray;
 }
 
-course-card.is-odd {
+course-card .is-odd {
   background: lightcyan;
 }
 

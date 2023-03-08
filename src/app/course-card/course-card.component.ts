@@ -10,6 +10,15 @@ export class CourseCardComponent {
   @Input()
   course: Course;
 
+  @Input()
+  cardIndex: number;
+
+  @Input()
+  isOdd: boolean;
+
+  @Input()
+  isEven: boolean;
+
   @Output("courseSelected")
   courseEventEmitter = new EventEmitter<Course>();
 
