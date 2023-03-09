@@ -2,24 +2,29 @@
 
 <div class="courses">
 
-  <course-card
+  <ng-container
     *ngFor="
       let course of courses;
       index as i;
       first as isFirst;
       last as isLast;
       odd as isOdd;
-      even as isEven;"
+      even as isEven;">
 
-    [class.is-first]="isFirst"
-    [class.is-last]="isLast"
-    [isOdd]="isOdd"
-    [isEven]="isEven"
-    (courseSelected)="onCourseSelected($event)"
-    [course]="course"
-    [cardIndex]="i+1">
-    >
-  </course-card>
+    <course-card
+      *ngIf="course && course.description"
+      [class.is-first]="isFirst"
+      [class.is-last]="isLast"
+      [isOdd]="isOdd"
+      [isEven]="isEven"
+      (courseSelected)="onCourseSelected($event)"
+      [course]="course"
+      [cardIndex]="i+1">
+
+    </course-card>
+
+  </ng-container>
+
 
 </div>
 
