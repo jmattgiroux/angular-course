@@ -33,9 +33,7 @@ export class CourseCardComponent {
 
   cardClasses() {
     if (this.course.category == "BEGINNER") {
-      const classes = ["beginner"];
-      const redundant = classes;
-      return redundant;
+      return ["beginner"];
     }
   }
 }
