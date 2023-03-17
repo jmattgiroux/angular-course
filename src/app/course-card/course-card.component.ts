@@ -30,4 +30,10 @@ export class CourseCardComponent {
     console.log("card component - button clicked...");
     this.courseEventEmitter.emit(this.course);
   }
+
+  cardClasses() {
+    if (this.course.category == "BEGINNER") {
+      return ["beginner"];
+    }
+  }
 }
