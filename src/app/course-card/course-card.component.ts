@@ -33,8 +33,9 @@ export class CourseCardComponent {
 
   cardClasses() {
     if (this.course.category == "BEGINNER") {
-      const classes = ["beginn er"];
-      return classes;
+      const classes = ["beginner"];
+      const meh = classes;
+      return meh;
     }
   }
 }
