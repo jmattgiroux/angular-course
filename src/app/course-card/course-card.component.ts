@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { Course } from "../model/course";
+import * as config from "../../config";
 
 @Component({
   selector: "course-card",
@@ -35,6 +36,9 @@ export class CourseCardComponent {
     if (this.course.category == "BEGINNER") {
       return ["beginner"];
     }
+  }
+  checkJsonOutputFeature() {
+    return config.variables.JsonOutputFeature;
   }
 
   cardStyles() {

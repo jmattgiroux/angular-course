@@ -1,6 +1,8 @@
 <div class="course-card"
      [ngClass]="cardClasses()">
 
+
+
   <div class="course-title" >
     {{ cardIndex + '. ' + course.description }}
   </div>
@@ -11,14 +13,11 @@
   <ng-template #noImage>
     <p>No image available</p>
   </ng-template>
-
-<!--  Start of JsonOutputFeature -->
-
-  <div class="course-description">
-    {{ course.longDescription }}
+  <div class="course-description" *ngIf="checkJsonOutputFeature()">
+    <div *ngFor="let pair of course | keyvalue">
+      {{pair.key}}: {{pair.value}}
+    </div>
   </div>
-
-<!--  End of JsonOutputFeature -->
 
   <div class="course-category" [ngSwitch]="course.category">
     <div class="category" *ngSwitchCase="'BEGINNER'">Beginner</div>
