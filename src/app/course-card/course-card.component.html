@@ -12,9 +12,13 @@
     <p>No image available</p>
   </ng-template>
 
-  <div class="course-description">
-    {{ course.longDescription }}
-  </div>
+<!--  Start of JsonOutputFeature -->
+
+<!--  <div class="course-description">-->
+<!--    {{ course.longDescription }}-->
+<!--  </div>-->
+
+<!--  End of JsonOutputFeature -->
 
   <div class="course-category" [ngSwitch]="course.category">
     <div class="category" *ngSwitchCase="'BEGINNER'">Beginner</div>
