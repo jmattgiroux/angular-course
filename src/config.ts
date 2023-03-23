@@ -1,3 +1,3 @@
 export const variables = {
-  JsonOutputFeature: true,
+  JsonOutputFeature: false,
 };
