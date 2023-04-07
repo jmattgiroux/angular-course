@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { CoursesService } from "./services/courses.service";
+import { Observable } from "rxjs";
+import { Course } from "./model/course";
 
 @Component({
   selector: "app-root",
@@ -7,7 +9,7 @@ import { CoursesService } from "./services/courses.service";
   styleUrls: ["./app.component.css"],
 })
 export class AppComponent implements OnInit {
-  courses$;
+  courses$: Observable<Course[]>;
 
   constructor(private coursesService: CoursesService) {}
 
