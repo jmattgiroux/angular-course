@@ -1,18 +1,4 @@
-import {
-  AfterViewInit,
-  Component,
-  ElementRef,
-  OnInit,
-  QueryList,
-  ViewChild,
-  ViewChildren,
-} from "@angular/core";
-import { COURSES } from "../db-data";
-import { Course } from "./model/course";
-import { CourseCardComponent } from "./course-card/course-card.component";
-import { HighlightedDirective } from "./directives/highlighted.directive";
-import { Observable } from "rxjs";
-import { HttpClient, HttpParams } from "@angular/common/http";
+import { Component, OnInit } from "@angular/core";
 import { CoursesService } from "./services/courses.service";
 
 @Component({
@@ -23,20 +9,9 @@ import { CoursesService } from "./services/courses.service";
 export class AppComponent implements OnInit {
   courses$;
 
-  constructor(
-    private http: HttpClient,
-    private coursesService: CoursesService
-  ) {}
+  constructor(private coursesService: CoursesService) {}
 
   ngOnInit() {
-    console.log(this.coursesService);
-
-    const params = new HttpParams().set("page", "1").set("pageSize", "10");
-
-    this.courses$ = this.http.get("api/courses", { params });
-
-    // this.http.get("api/courses", { params }).subscribe((result) => {
-    //   this.courses = Object.keys(result).map((key) => result[key]);
-    // });
+    this.courses$ = this.coursesService.loadCourses();
   }
 }
