@@ -13,6 +13,10 @@ export class AppComponent implements OnInit {
 
   constructor(private coursesService: CoursesService) {}
 
+  saveCourse(course: Course) {
+    this.coursesService.saveCourse(course);
+  }
+
   ngOnInit() {
     this.courses$ = this.coursesService.loadCourses();
   }
